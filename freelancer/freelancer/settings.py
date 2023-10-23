@@ -7,6 +7,12 @@
 #     https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
 #     https://docs.scrapy.org/en/latest/topics/spider-middleware.html
 
+ITEM_PIPELINES = {"freelancer.pipelines.FreelancerPipeline": 300}
+
+MONGODB_URI = "mongodb://localhost:27017"
+MONGODB_DATABASE = "freelancer"
+MONGODB_COLLECTION = "items"
+
 BOT_NAME = "freelancer"
 
 SPIDER_MODULES = ["freelancer.spiders"]
@@ -17,10 +23,10 @@ NEWSPIDER_MODULE = "freelancer.spiders"
 #USER_AGENT = "freelancer (+http://www.yourdomain.com)"
 
 # Obey robots.txt rules
-ROBOTSTXT_OBEY = True
+ROBOTSTXT_OBEY = False
 
 # Configure maximum concurrent requests performed by Scrapy (default: 16)
-#CONCURRENT_REQUESTS = 32
+CONCURRENT_REQUESTS = 4
 
 # Configure a delay for requests for the same website (default: 0)
 # See https://docs.scrapy.org/en/latest/topics/settings.html#download-delay
