@@ -7,8 +7,10 @@ import scrapy
 
 
 class FreelancerItem(scrapy.Item):
+    url = scrapy.Field()
     title = scrapy.Field()
     price = scrapy.Field()
     detail = scrapy.Field()
     tags = scrapy.Field()
+    about = scrapy.Field()
     client = scrapy.Field()
